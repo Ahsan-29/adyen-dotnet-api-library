@@ -39,6 +39,7 @@ namespace Adyen.Model.Notification
         public const string EventCodeRecurringContract = "RECURRING_CONTRACT";
         public const string EventCodeNotificationOfChargeback = "NOTIFICATION_OF_CHARGEBACK";
         public const string EventCodeChargeback = "CHARGEBACK";
+        public const string EventCodeNotificationOfFraud = "NOTIFICATION_OF_FRAUD";
 
         //Additional Data
         public const string AdditionalDataTotalFraudScore = "totalFraudScore";
