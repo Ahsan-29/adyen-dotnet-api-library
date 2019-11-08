@@ -1,4 +1,27 @@
-﻿using System;
+﻿#region Licence
+// /*
+//  *                       ######
+//  *                       ######
+//  * ############    ####( ######  #####. ######  ############   ############
+//  * #############  #####( ######  #####. ######  #############  #############
+//  *        ######  #####( ######  #####. ######  #####  ######  #####  ######
+//  * ###### ######  #####( ######  #####. ######  #####  #####   #####  ######
+//  * ###### ######  #####( ######  #####. ######  #####          #####  ######
+//  * #############  #############  #############  #############  #####  ######
+//  *  ############   ############  #############   ############  #####  ######
+//  *                                      ######
+//  *                               #############
+//  *                               ############
+//  *
+//  * Adyen Dotnet API Library
+//  *
+//  * Copyright (c) 2019 Adyen B.V.
+//  * This file is open source and available under the MIT license.
+//  * See the LICENSE file for more info.
+//  */
+#endregion
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
@@ -45,15 +68,18 @@ namespace Adyen.Model.Checkout
         public string RecurringDetailReference { get; set; }
         [DataMember(Name = "storeDetails", EmitDefaultValue = false)]
         public bool StoreDetails { get; set; }
-        [DataMember(Name = "idealIssuer", EmitDefaultValue = false)]
-        public string IdealIssuer { get; set; }
+        [DataMember(Name = "issuer", EmitDefaultValue = false)]
+        public string Issuer { get; set; }
         [DataMember(Name = "sepa.ownerName", EmitDefaultValue = false)]
         public string SepaOwnerName { get; set; }
         [DataMember(Name = "sepa.ibanNumber", EmitDefaultValue = false)]
         public string SepaIbanNumber { get; set; }
-
         [DataMember(Name = "bankAccount", EmitDefaultValue = false)]
         public BankAccount BankAccount { get; set; }
+        [DataMember(Name = "additionalData.applepay.token", EmitDefaultValue = false)]
+        public string ApplePayToken { get; set; }
+        [DataMember(Name = "paywithgoogle.token", EmitDefaultValue = false)]  
+        public string GooglePayToken { get; set; }
 
         public override string ToString()
         {
@@ -75,10 +101,12 @@ namespace Adyen.Model.Checkout
             sb.Append("  EncryptedSecurityCode: ").Append(EncryptedSecurityCode).Append("\n");
             sb.Append("  RecurringDetailReference: ").Append(RecurringDetailReference).Append("\n");
             sb.Append("  StoreDetails: ").Append(StoreDetails).Append("\n");
-            sb.Append("  IdealIssuer: ").Append(IdealIssuer).Append("\n");
+            sb.Append("  Issuer: ").Append(Issuer).Append("\n");
             sb.Append("  SepaOwnerName: ").Append(SepaOwnerName).Append("\n");
             sb.Append("  SepaIbanNumber: ").Append(SepaIbanNumber).Append("\n");
             sb.Append("  BankAccount: ").Append(BankAccount).Append("\n");
+            sb.Append("  ApplePayToken: ").Append(BankAccount).Append("\n");
+            sb.Append("  GooglePayToken: ").Append(BankAccount).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -194,9 +222,9 @@ namespace Adyen.Model.Checkout
                     this.StoreDetails.Equals(input.StoreDetails))
                 ) &&
                 (
-                    this.IdealIssuer == input.IdealIssuer ||
-                    (this.IdealIssuer != null &&
-                    this.IdealIssuer.Equals(input.IdealIssuer))
+                    this.Issuer == input.Issuer ||
+                    (this.Issuer != null &&
+                    this.Issuer.Equals(input.Issuer))
                 ) &&
                 (
                     this.SepaOwnerName == input.SepaOwnerName ||
@@ -212,6 +240,16 @@ namespace Adyen.Model.Checkout
                     this.BankAccount == input.BankAccount ||
                     (this.BankAccount != null &&
                     this.BankAccount.Equals(input.BankAccount))
+                ) &&
+                (
+                    this.ApplePayToken == input.ApplePayToken ||
+                    (this.ApplePayToken != null &&
+                    this.ApplePayToken.Equals(input.ApplePayToken))
+                ) &&
+                (
+                    this.GooglePayToken == input.GooglePayToken ||
+                    (this.GooglePayToken != null &&
+                    this.GooglePayToken.Equals(input.GooglePayToken))
                 );
         }
 

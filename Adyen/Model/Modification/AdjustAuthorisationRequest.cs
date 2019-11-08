@@ -1,4 +1,27 @@
-﻿using Adyen.Model.ApplicationInformation;
+﻿#region Licence
+// /*
+//  *                       ######
+//  *                       ######
+//  * ############    ####( ######  #####. ######  ############   ############
+//  * #############  #####( ######  #####. ######  #############  #############
+//  *        ######  #####( ######  #####. ######  #####  ######  #####  ######
+//  * ###### ######  #####( ######  #####. ######  #####  #####   #####  ######
+//  * ###### ######  #####( ######  #####. ######  #####          #####  ######
+//  * #############  #############  #############  #############  #####  ######
+//  *  ############   ############  #############   ############  #####  ######
+//  *                                      ######
+//  *                               #############
+//  *                               ############
+//  *
+//  * Adyen Dotnet API Library
+//  *
+//  * Copyright (c) 2019 Adyen B.V.
+//  * This file is open source and available under the MIT license.
+//  * See the LICENSE file for more info.
+//  */
+#endregion
+
+using Adyen.Model.ApplicationInformation;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -15,7 +38,7 @@ namespace Adyen.Model.Modification
             if (ApplicationInfo == null)
                 ApplicationInfo = new ApplicationInfo();
         }
-        [DataMember(Name = "AdjustAuthorisationRequest", EmitDefaultValue = false)]
+        [DataMember(Name = "modificationAmount", EmitDefaultValue = false)]
         public Amount ModificationAmount { get; set; }
 
         /// <summary>

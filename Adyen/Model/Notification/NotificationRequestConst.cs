@@ -1,3 +1,26 @@
+#region Licence
+// /*
+//  *                       ######
+//  *                       ######
+//  * ############    ####( ######  #####. ######  ############   ############
+//  * #############  #####( ######  #####. ######  #############  #############
+//  *        ######  #####( ######  #####. ######  #####  ######  #####  ######
+//  * ###### ######  #####( ######  #####. ######  #####  #####   #####  ######
+//  * ###### ######  #####( ######  #####. ######  #####          #####  ######
+//  * #############  #############  #############  #############  #####  ######
+//  *  ############   ############  #############   ############  #####  ######
+//  *                                      ######
+//  *                               #############
+//  *                               ############
+//  *
+//  * Adyen Dotnet API Library
+//  *
+//  * Copyright (c) 2019 Adyen B.V.
+//  * This file is open source and available under the MIT license.
+//  * See the LICENSE file for more info.
+//  */
+#endregion
+
 namespace Adyen.Model.Notification
 {
     public class NotificationRequestConst
@@ -16,6 +39,7 @@ namespace Adyen.Model.Notification
         public const string EventCodeRecurringContract = "RECURRING_CONTRACT";
         public const string EventCodeNotificationOfChargeback = "NOTIFICATION_OF_CHARGEBACK";
         public const string EventCodeChargeback = "CHARGEBACK";
+        public const string EventCodeNotificationOfFraud = "NOTIFICATION_OF_FRAUD";
 
         //Additional Data
         public const string AdditionalDataTotalFraudScore = "totalFraudScore";
